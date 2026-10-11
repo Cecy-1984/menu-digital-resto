@@ -1,0 +1,207 @@
+/* ESTILOS GENERALES */
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #302829;
+    background-color: #f7f4ef;
+}
+
+body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #f7f4ef;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+    padding-bottom: 40px;
+}
+
+/* ENCABEZADO */
+
+header {
+    padding: 42px 20px;
+    text-align: center;
+    color: #f7f0e7;
+    background-color: #43262e;
+    border-bottom: 3px solid #b49a68;
+}
+
+header h1 {
+    margin: 0;
+    color: #fffaf3;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    font-weight: normal;
+}
+
+header p:not(.abierto):not(.cerrado) {
+    margin: 12px 0 20px;
+    color: #e4d8d2;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* ESTADO DEL RESTAURANTE */
+
+.abierto,
+.cerrado {
+    display: inline-block;
+    margin: 0;
+    padding: 7px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+.abierto {
+    color: #245337;
+    background-color: #e3eee3;
+}
+
+.cerrado {
+    color: #812e35;
+    background-color: #f5e2df;
+}
+
+/* TÍTULO DEL MENÚ */
+
+#root > h1 {
+    margin: 42px auto 12px;
+    padding: 0 20px;
+    text-align: center;
+    color: #43262e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+    font-weight: normal;
+}
+
+#root > h1::after {
+    content: "";
+    display: block;
+    width: 55px;
+    height: 2px;
+    margin: 15px auto 0;
+    background-color: #b49a68;
+}
+
+/* LISTA DE PLATOS */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: 22px;
+    width: min(1100px, calc(100% - 40px));
+    margin: 28px auto 40px;
+    align-items: stretch;
+}
+
+/* TARJETAS */
+
+.estilo-platocard {
+    margin: 0;
+    padding: 24px;
+    background-color: #fffdf9;
+    border: 1px solid #e4ded5;
+    border-radius: 6px;
+}
+
+.estilo-platocard h2 {
+    margin: 0 0 14px;
+    color: #43262e;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 1.35rem;
+    line-height: 1.4;
+}
+
+.estilo-platocard p {
+    margin: 12px 0;
+    color: #625957;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* PRECIO */
+
+.estilo-platocard p:last-of-type {
+    margin-top: 18px;
+    padding-top: 14px;
+    border-top: 1px solid #e9e1d7;
+    color: #7a4a39;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* PLATOS AGOTADOS */
+
+.agotado {
+    opacity: 0.55;
+}
+
+/* ETIQUETAS */
+
+.etiquetas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 16px;
+}
+
+.etiqueta {
+    padding: 6px 9px;
+    color: #654b36;
+    background-color: #f2ede4;
+    border: 1px solid #e2d7c4;
+    border-radius: 4px;
+    font-size: 0.78rem;
+}
+
+/* RESUMEN DEL MENÚ */
+
+section {
+    width: min(1100px, calc(100% - 40px));
+    margin: 40px auto 0;
+    padding: 22px 26px;
+    background-color: #43262e;
+    border-left: 3px solid #b49a68;
+    border-radius: 4px;
+}
+
+section p {
+    margin: 9px 0;
+    color: #f5eee6;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ADAPTACIÓN A CELULARES */
+
+@media (max-width: 600px) {
+    header {
+        padding: 34px 18px;
+    }
+
+    #root > h1 {
+        margin-top: 32px;
+    }
+
+    .menu-grid {
+        width: calc(100% - 28px);
+        gap: 16px;
+    }
+
+    .estilo-platocard {
+        padding: 20px;
+    }
+
+    section {
+        width: calc(100% - 28px);
+        padding: 20px;
+    }
+}
